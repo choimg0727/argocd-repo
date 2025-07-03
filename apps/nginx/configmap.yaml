@@ -4,7 +4,45 @@ metadata:
   name: nginx-index
 data:
   index.html: |
-    <html>
-    <head><title>K8S 테스트</title></head>
-    <body><h1>K8S 테스트입니다~</h1></body>
+    <!DOCTYPE html>
+    <html lang="ko">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>K8S 테스트</title>
+      <style>
+        body {
+          background: linear-gradient(135deg, #00c6ff, #0072ff);
+          color: white;
+          font-family: "Segoe UI", sans-serif;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 100vh;
+          margin: 0;
+          flex-direction: column;
+        }
+        h1 {
+          font-size: 3em;
+          margin-bottom: 0.5em;
+        }
+        p {
+          font-size: 1.2em;
+          opacity: 0.9;
+        }
+        .card {
+          background: rgba(255, 255, 255, 0.1);
+          padding: 2em 3em;
+          border-radius: 16px;
+          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+          text-align: center;
+        }
+      </style>
+    </head>
+    <body>
+      <div class="card">
+        <h1>Kubernetes 배포 성공 🎉</h1>
+        <p>K8S 테스트입니다~<br />Nginx를 통해 서빙 중입니다.</p>
+      </div>
+    </body>
     </html>
