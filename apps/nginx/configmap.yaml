@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: nginx-index
+data:
+  index.html: |
+    <html>
+    <head><title>K8S 테스트</title></head>
+    <body><h1>K8S 테스트입니다~</h1></body>
+    </html>
