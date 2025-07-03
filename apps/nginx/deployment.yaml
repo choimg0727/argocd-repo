@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: nginx
 spec:
-  replicas: 4
+  replicas: 6
   selector:
     matchLabels:
       app: nginx
@@ -21,6 +21,18 @@ spec:
         - name: html
           mountPath: /usr/share/nginx/html/index.html
           subPath: index.html
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 80
+          initialDelaySeconds: 5
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 80
+          initialDelaySeconds: 3
+          periodSeconds: 5
       volumes:
       - name: html
         configMap:
